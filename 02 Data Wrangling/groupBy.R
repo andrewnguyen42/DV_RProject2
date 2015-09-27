@@ -4,3 +4,6 @@ discoveryTypeYearDF <- df %.%
   group_by(DATE_0, PLANETDISCMETH) %.%
   summarise(discoveryCount = length(PLANETDISCMETH))
 
+
+ggplot(discoveryTypeYearDF, aes(x=DATE_0,y=discoveryCount,fill=PLANETDISCMETH))+
+  geom_bar(stat="identity")
